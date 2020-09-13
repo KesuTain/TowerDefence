@@ -1,0 +1,229 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5169351238124165672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5169351238124165671}
+  - component: {fileID: 5169351238124165673}
+  - component: {fileID: 9049536420652599123}
+  - component: {fileID: 7372683884210160751}
+  - component: {fileID: 8722310226880545117}
+  m_Layer: 0
+  m_Name: Enemy
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5169351238124165671
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5169351238124165672}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.49, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4402612542123177293}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5169351238124165673
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5169351238124165672}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!195 &9049536420652599123
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5169351238124165672}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 7
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!54 &7372683884210160751
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5169351238124165672}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &8722310226880545117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5169351238124165672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95941c7889aa999498b3113e47e8e2d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Money: 0
+  Damage: 0
+  Health: 0
+  Activity: 1
+--- !u!1001 &4398316159798954991
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5169351238124165671}
+    m_Modifications:
+    - target: {fileID: 1634723230223232, guid: cfc86fa99fda43a4182c88a7924f84be, type: 3}
+      propertyPath: m_Name
+      value: Meshtint Barbarian Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077830206874998, guid: cfc86fa99fda43a4182c88a7924f84be, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.6287642
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077830206874998, guid: cfc86fa99fda43a4182c88a7924f84be, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.09938994
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232658452728910, guid: cfc86fa99fda43a4182c88a7924f84be, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.6340069
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232658452728910, guid: cfc86fa99fda43a4182c88a7924f84be, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0034192926
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444022583354062, guid: cfc86fa99fda43a4182c88a7924f84be, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444022583354062, guid: cfc86fa99fda43a4182c88a7924f84be, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730071277584034, guid: cfc86fa99fda43a4182c88a7924f84be, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730071277584034, guid: cfc86fa99fda43a4182c88a7924f84be, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730071277584034, guid: cfc86fa99fda43a4182c88a7924f84be, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730071277584034, guid: cfc86fa99fda43a4182c88a7924f84be, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730071277584034, guid: cfc86fa99fda43a4182c88a7924f84be, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730071277584034, guid: cfc86fa99fda43a4182c88a7924f84be, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730071277584034, guid: cfc86fa99fda43a4182c88a7924f84be, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730071277584034, guid: cfc86fa99fda43a4182c88a7924f84be, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730071277584034, guid: cfc86fa99fda43a4182c88a7924f84be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730071277584034, guid: cfc86fa99fda43a4182c88a7924f84be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730071277584034, guid: cfc86fa99fda43a4182c88a7924f84be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869482260908292, guid: cfc86fa99fda43a4182c88a7924f84be, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.6287643
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869482260908292, guid: cfc86fa99fda43a4182c88a7924f84be, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.09938998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909803124976756, guid: cfc86fa99fda43a4182c88a7924f84be, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909803124976756, guid: cfc86fa99fda43a4182c88a7924f84be, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.6340069
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909803124976756, guid: cfc86fa99fda43a4182c88a7924f84be, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0034192926
+      objectReference: {fileID: 0}
+    - target: {fileID: 95579080373870624, guid: cfc86fa99fda43a4182c88a7924f84be,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 64b103d076aa7d048acbc966657439a1, type: 2}
+    - target: {fileID: 95579080373870624, guid: cfc86fa99fda43a4182c88a7924f84be,
+        type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'RigPelvis'\n\tTransform 'RigSpine2'\n\tTransform
+        'RigSpine1'\n\tTransform 'RigPelvis'\n\tTransform 'RigSpine2'\n\tTransform
+        'RigSpine1'\n\tTransform 'RigSpine2'\n\tTransform 'RigSpine1'\n\tTransform
+        'RigPelvis'\n\tFrom animation clip 'attack01'\n\tFrom animation clip 'attack02'\n\tFrom
+        animation clip 'defend'\n\tFrom animation clip 'die'\n\tFrom animation clip
+        'hit'\n\tFrom animation clip 'idle'\n\tFrom animation clip 'jump'\n\tFrom
+        animation clip 'run'\n\tFrom animation clip 'walk'"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cfc86fa99fda43a4182c88a7924f84be, type: 3}
+--- !u!4 &4402612542123177293 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4730071277584034, guid: cfc86fa99fda43a4182c88a7924f84be,
+    type: 3}
+  m_PrefabInstance: {fileID: 4398316159798954991}
+  m_PrefabAsset: {fileID: 0}
