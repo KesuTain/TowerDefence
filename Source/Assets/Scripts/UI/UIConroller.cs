@@ -15,9 +15,13 @@ public class UIConroller : MonoBehaviour
     [Header("Меню перезапуска")]
     public GameObject ReloadMenu;
 
+    [SerializeField]
+    private Camera camera;
     void Update()
     {
         CheckStats();
+        if (Input.GetMouseButtonUp(0))
+            UpgradeTower();
     }
 
     //Обновление значений UI
@@ -64,5 +68,19 @@ public class UIConroller : MonoBehaviour
         ResourceSystem.Money = 0;
         Time.timeScale = 1;
         ReloadMenu.SetActive(false);
+    }
+
+    void UpgradeTower()
+    {
+        RaycastHit hit;
+        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.collider.CompareTag("Tower"))
+            {
+                hit.collider.transform.GetComponentInParent<TowerEntity>().UpgradeTower();
+            }
+        }
     }
 }

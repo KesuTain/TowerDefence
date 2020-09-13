@@ -38,13 +38,14 @@ public class SpawnSystem : MonoBehaviour
     {
         WaveActivity = true;
         FindSpawnPoints();
-        
+        WaveInterval = ResourceSystem.IntervalWave;
     }
     void Update()
     {
         if (WaveActivity == true)
             StartCoroutine(Wave(NumberOfWave + Random.Range(CountEnemies, CountEnemies + 2)));
     }
+
 
     //Поиск точек для спавна врагов.
     private void FindSpawnPoints()
@@ -91,6 +92,7 @@ public class SpawnSystem : MonoBehaviour
         NumberOfWave++;
         CreateEnemies(CountEnemies);
         StartCoroutine(SpawnEnemies());
+        Debug.Log("Wait " + WaveInterval + " seconds");
         yield return new WaitForSeconds(WaveInterval);
         WaveActivity = true;
     }

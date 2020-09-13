@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class PatronEntity : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private bool DeleteObj;
     void Start()
     {
-        
+        DeleteObj = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(new Vector3(50f * Time.deltaTime, 0f, 0f));
+        if (DeleteObj)
+            StartCoroutine(Delete());
+    }
+
+    IEnumerator Delete()
+    {
+        DeleteObj = false;
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 }
