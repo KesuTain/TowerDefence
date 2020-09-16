@@ -51,7 +51,7 @@ public class EnemyEntity : Entity
     public void SetSettings(int Wave)
     {
         Health = 100 * Wave;
-        Money = 10 * Wave;
+        Money = 2 * Wave;
         Damage = 10 * Wave;
     }
 

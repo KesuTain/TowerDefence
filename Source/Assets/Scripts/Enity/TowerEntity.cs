@@ -24,9 +24,10 @@ public class TowerEntity : Entity
     private bool CanShot;
     void Start()
     {
+        ResourceSystem.Money = ResourceSystem.LoadMoney();
         ParentForPatrons = gameObject.transform.GetChild(1).gameObject;
         CanShot = true;
-        Damage = 100;
+        Damage = 100 * ResourceSystem.FactorDamageTower;
         SpeedOfShooting = 2f;
     }
 
@@ -77,7 +78,7 @@ public class TowerEntity : Entity
         if(ResourceSystem.Money >= CostUpgrade && Damage < 500)
         {
             ResourceSystem.Money -= CostUpgrade;
-            Damage += 100;
+            Damage += 100 * ResourceSystem.FactorDamageTower;
             CostUpgrade = CostUpgrade * (Damage / 100);
             SpeedOfShooting /= 2f;
             gameObject.transform.localScale *= 1.1f;
