@@ -24,7 +24,11 @@ public class UIConroller : MonoBehaviour
     private Camera camera;
     private void Start()
     {
-        if(PlayerPrefs.GetInt("FactorTower") != 0)
+        ResourceSystem.HealthPlayer = 50 * ResourceSystem.FactorHomeTower;
+        ResourceSystem.Money = ResourceSystem.LoadMoney();
+        ReloadMenu.SetActive(false);
+
+        if (PlayerPrefs.GetInt("FactorTower") != 0)
         {
             ResourceSystem.LoadFactors();
         }
@@ -38,7 +42,6 @@ public class UIConroller : MonoBehaviour
     }
     void DebugT()
     {
-        Debug.Log(ResourceSystem.FactorDamageTower);
         //Debug.Log();
     }
     //Обновление значений UI
@@ -64,11 +67,9 @@ public class UIConroller : MonoBehaviour
 
     public void ReloadScene()
     {
-        SceneManager.LoadScene(0); 
-        ResourceSystem.HealthPlayer = 50;
         ResourceSystem.Money = ResourceSystem.LoadMoney();
+        SceneManager.LoadScene(0); 
         Time.timeScale = 1;
-        ReloadMenu.SetActive(false);
     }
 
     void UpgradeTower()
@@ -98,7 +99,7 @@ public class UIConroller : MonoBehaviour
     public void CheckAllTowerUpdate()
     {
         CostUpAllTower.text = "Стоимость " + ResourceSystem.CostUpgradeTower.ToString();
-        UpAllTowerNow.text = "Башни усилены в " + ResourceSystem.FactorDamageTower.ToString() + " раз";
+        UpAllTowerNow.text = "F";
     }
 
     public void UpgradeHome()
@@ -107,13 +108,15 @@ public class UIConroller : MonoBehaviour
         {
             ResourceSystem.Money -= ResourceSystem.CostUpgradeHome;
             ResourceSystem.FactorHomeTower += 1;
+            ResourceSystem.ChangeStats();
             ResourceSystem.SaveFactors();
+            ResourceSystem.SaveMoney(ResourceSystem.Money);
         }
     }
 
     public void CheckHomeUpdate()
     {
         CostUpHome.text = "Стоимость " + ResourceSystem.CostUpgradeHome.ToString();
-        UpHomeNow.text = "Дом укреплён в " + ResourceSystem.FactorHomeTower.ToString() + " раз";
+        UpHomeNow.text = "F" + ResourceSystem.FactorHomeTower.ToString() + " раз";
     }
 }

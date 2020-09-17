@@ -16,7 +16,7 @@ public static class ResourceSystem
     public static int Wave = 0;
 
     public static int CostUpgradeTower = 1500 * FactorDamageTower;
-    public static int CostUpgradeHome = 100 * FactorHomeTower;
+    public static int CostUpgradeHome = 100;
 
     //Конфигурация интервала волны.
     public static float IntervalWave = 10;
@@ -25,6 +25,12 @@ public static class ResourceSystem
     //Позиция базы игрока.
     public static Vector3 BasePlayer = GameObject.Find("Base Player").transform.position;
 
+    public static void ChangeStats()
+    {
+        HealthPlayer = 50 * FactorHomeTower;
+        CostUpgradeTower = 1500 * FactorDamageTower;
+        CostUpgradeHome = 100 * FactorHomeTower;
+    }
     //Установка нулевого значения.
     public static void SetZeroPosition(GameObject clone)
     {
@@ -55,6 +61,7 @@ public static class ResourceSystem
     {
         PlayerPrefs.SetInt("FactorTower", FactorDamageTower);
         PlayerPrefs.SetInt("FactorHome", FactorHomeTower);
+        Debug.Log(PlayerPrefs.GetInt("FactorHome"));
     }
     public static void LoadFactors()
     {

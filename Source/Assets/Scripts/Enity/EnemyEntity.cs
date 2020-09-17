@@ -13,6 +13,7 @@ public class EnemyEntity : Entity
     [SerializeField]
     private int Damage;
     public int Health;
+    public GameObject Child;
 
     [Header("Активность")]
     public bool Activity;
@@ -25,6 +26,7 @@ public class EnemyEntity : Entity
 
     private void Update()
     {
+        Child.transform.localPosition = new Vector3(0, 0.75f, 0);
         //Враг умирает если его здоровье падает ниже 0 и он при этом активен.
         if (Health <= 0 && Activity == true)
         {

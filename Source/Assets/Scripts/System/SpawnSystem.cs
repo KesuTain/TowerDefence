@@ -34,18 +34,39 @@ public class SpawnSystem : MonoBehaviour
 
     public Transform PointForEnemies;
     private bool WaveActivity;
+
     void Start()
     {
         WaveActivity = true;
         FindSpawnPoints();
         WaveInterval = ResourceSystem.IntervalWave;
+        StartCoroutine(Wave(NumberOfWave + Random.Range(CountEnemies, CountEnemies + 2)));
     }
     void Update()
     {
-        if (WaveActivity == true)
+        if (WaveActivity == true && CheckWave() == true)
             StartCoroutine(Wave(NumberOfWave + Random.Range(CountEnemies, CountEnemies + 2)));
     }
 
+    bool CheckWave()
+    {
+        int Now = 0;
+        for (int i = 0; i < Enemies.Count; i++)
+        {
+            if (Enemies[i].GetComponent<EnemyEntity>().Activity == true)
+            {
+                Now++;
+            }
+        }
+
+        if (Now == 0)
+        {
+            return true;
+        } else
+        {
+            return false;
+        }
+    }
 
     //Поиск точек для спавна врагов.
     private void FindSpawnPoints()
@@ -93,6 +114,7 @@ public class SpawnSystem : MonoBehaviour
         CreateEnemies(CountEnemies);
         StartCoroutine(SpawnEnemies());
         Debug.Log("Wait " + WaveInterval + " seconds");
+        Debug.Log(Enemies.Count);
         yield return new WaitForSeconds(WaveInterval);
         WaveActivity = true;
     }
